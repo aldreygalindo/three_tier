@@ -1,14 +1,25 @@
 ---
 # tasks file for roles/win_ad_user
+#- name: Debug
+#  debug:
+#    msg: "usuario: {{ item.name }}"
+#  loop: "{{ user_info.user }}"
+
+- name: Create groups
+  win_domain_group:
+    name: "{{ item.group.0.group_name }}"
+    state: present
+  loop: "{{ user_info.user }}"
+
 - name: Create users
   win_domain_user:
-    name: "{{ item.0.name }}"
-    email: "{{ item.0.email }}"
-    firstname: "{{ item.0.firstname }}"
-    surname: "{{ item.0.surname }}"
-    password: "{{ item.0.password }}"
+    name: "{{ item.name }}"
+    email: "{{ item.email }}"
+    firstname: "{{ item.firstname }}"
+    surname: "{{ item.surname }}"
+    password: "{{ item.password }}"
     state: present
-    groups:
-      - "{{ item.o.group.group_name }}"
-  loop: "{{ user_info.user }}" 
+    #groups:
+    #  - "{{ item.group.0.group_name }}"
+  loop: "{{ user_info.user }}"
 
