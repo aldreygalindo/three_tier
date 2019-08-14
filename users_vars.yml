@@ -1,36 +1,37 @@
+---
+# vars file for roles/win_ad_user
 user_info:
-  name: 
-    - james
-    - bill
-    - mickey
-    - donald
-  firstname:
-    - James
-    - Bill
-    - Mickey
-    - Donald
-  surname:
-    - Jockey
-    - Gates
-    - Mouse
-    - Duck
-  password:
-    - "redhat@123"
-    - "redhat@123"
-    - "redhat@123"
-    - "redhat@123"
-  email: 
-    - "james@ad1.2c1a.example.opentlc.com"
-    - "bill@ad1.2c1a.example.opentlc.com"
-    - "mickey@ad1.2c1a.example.opentlc.com"
-    - "donald@ad1.2c1a.example.opentlc.com"
-  group_name:
-    - dev
-    - dev
-    - qa
-    - qa
-  group_scope:
-    - domainlocal
-    - domainlocal
-    - domainlocal
-    - domainlocal
+  user:
+    - name: james
+      firstname: James
+      surname: Jockey
+      password: "redhat@123"
+      email: "james@ad1.2c1a.example.opentlc.com"
+      group:
+       - group_name: dev
+         group_scope: domainlocal
+    - name: bill
+      firstname: Bill 
+      surname: Gates
+      password: "redhat@123"
+      email: "bill@ad1.2c1a.example.opentlc.com"
+      group:
+       - group_name: dev
+         group_scope: domainlocal
+    - name: mickey
+      firstname: Mickey
+      surname: Mouse
+      password: "redhat@123"
+      email: "mickey@ad1.2c1a.example.opentlc.com"
+      group:
+       - group_name: qa
+         group_scope: domainlocal
+    - name: donald
+      firstname: Donald
+      surname: Duck
+      password: "redhat@123"
+      email: "donald@ad1.2c1a.example.opentlc.com"
+      group:
+       - group_name: qa
+         group_scope: domainlocal
+      
