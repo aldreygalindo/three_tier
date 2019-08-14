@@ -8,7 +8,7 @@
 - name: Create new domain
   win_domain:
     dns_domain_name: ad1.2c1a.example.opentlc.com
-    safe_mode_password: redhat
+    safe_mode_password: cmVkaGF0MTIzNDU2OTAK
 
 - name: Reboot the machine with all defaults
   win_reboot:
