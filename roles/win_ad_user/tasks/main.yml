@@ -1,0 +1,20 @@
+---
+# tasks file for roles/win_ad_user
+- name: Create users
+  win_domain_user:
+    name: "{{ name }}"
+    state: present
+    fullname: "{{ first_name}} {{ surname }}"
+
+- name: Create users
+  win_domain_user:
+    name: "{{ item.name }}"
+    email: "{{ item.email }}"
+    firstname: "{{ item.firstname }}"
+    surname: "{{ item.surname }}"
+    password: "{{ item.password }}"
+    state: present
+    groups:
+      - "{{ item.group_name }}"
+  loop: "{{ user_info }}" 
+

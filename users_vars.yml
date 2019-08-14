@@ -1,0 +1,36 @@
+user_info:
+  name: 
+    - james
+    - bill
+    - mickey
+    - donald
+  firstname:
+    - James
+    - Bill
+    - Mickey
+    - Donald
+  surname:
+    - Jockey
+    - Gates
+    - Mouse
+    - Duck
+  password:
+    - "redhat@123"
+    - "redhat@123"
+    - "redhat@123"
+    - "redhat@123"
+  email: 
+    - "james@ad1.2c1a.example.opentlc.com"
+    - "bill@ad1.2c1a.example.opentlc.com"
+    - "mickey@ad1.2c1a.example.opentlc.com"
+    - "donald@ad1.2c1a.example.opentlc.com"
+  group_name:
+    - dev
+    - dev
+    - qa
+    - qa
+  group_scope:
+    - domainlocal
+    - domainlocal
+    - domainlocal
+    - domainlocal
