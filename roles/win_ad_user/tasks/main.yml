@@ -9,6 +9,7 @@
   win_domain_group:
     name: "{{ item.group.0.group_name }}"
     state: present
+    scope: "{{ item.group.0.group_scope }}"
   loop: "{{ user_info.user }}"
 
 - name: Create users
