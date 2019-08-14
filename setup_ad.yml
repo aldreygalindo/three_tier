@@ -1,0 +1,7 @@
+---
+- name: setup_ad.yml
+  hosts: windows
+  roles: 
+   - win_ad_install
+
+...

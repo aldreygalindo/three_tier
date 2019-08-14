@@ -1,0 +1,17 @@
+---
+# tasks file for roles/win_ad_install
+- name: Install AD
+  win_feature:
+    name: AD-Domain-Services
+    state: present
+
+- name: Create new domain
+  win_domain:
+    dns_domain_name: ad1.2c1a.example.opentlc.com
+    safe_mode_password: redhat
+
+- name: Reboot the machine with all defaults
+  win_reboot:
+
+- name: List available domain
+  command: nltest /dclist:"{{ ad_domain_name }}" 
