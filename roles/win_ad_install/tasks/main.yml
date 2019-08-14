@@ -15,4 +15,11 @@
     reboot_timeout: 3600
 
 - name: List available domain
-  command: nltest /dclist:"{{ ad_domain_name }}" 
+  win_command: "nltest /dclist:{{ ad_domain_name }}"
+  register: list_domain
+
+- name: Debug
+  debug:
+    var: list_domain
+
+
