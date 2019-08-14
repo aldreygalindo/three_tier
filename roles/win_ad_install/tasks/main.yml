@@ -12,6 +12,7 @@
 
 - name: Reboot the machine with all defaults
   win_reboot:
+    reboot_timeout: 3600
 
 - name: List available domain
   command: nltest /dclist:"{{ ad_domain_name }}" 
